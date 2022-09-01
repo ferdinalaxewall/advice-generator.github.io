@@ -1,0 +1,150 @@
+
+:root{
+    --clr-light-cyan: hsl(193, 38%, 86%);
+    --clr-neon-green: hsl(150, 100%, 66%);
+    --clr-grayish-blue: hsl(217, 19%, 38%);
+    --clr-dark-grayish-blue: hsl(217, 19%, 24%);
+    --clr-dark-blue: hsl(218, 23%, 16%);
+    --font-family:'Manrope', sans-serif;
+    --fs-subtitle:16px;
+    --fs-title:28px;
+    --fw-bold:800;
+    --fw-medium:500;
+}
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    background-color: var(--clr-dark-blue);
+    color: var(--clr-light-cyan);
+    font-family: var(--font-family);
+    font-size: var(--fs-subtitle);
+    font-weight: var(--fw-bold);
+    display: grid;
+    place-items: center;
+}
+
+button:focus{
+    outline: none;
+}
+
+.advice-card{
+    background-color: var(--clr-dark-grayish-blue);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: flex-start;
+    width: 535px;
+    position: relative;
+    padding: 40px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.advice-card-wrapper{
+    margin-bottom: 25px;
+}
+
+
+.advice-header{
+    text-transform: uppercase;
+    color: var(--clr-neon-green);
+    letter-spacing: 3.5px;
+    font-weight: var(--fw-medium);
+}
+
+.advice-body{
+    font-size: var(--fs-title);
+    margin-top: 25px;
+    margin-bottom: 30px;
+}   
+
+.dice-button{
+    position: absolute;
+    cursor: pointer;
+    border: none;
+    background-color: var(--clr-neon-green);
+    width: 65px;
+    height: 65px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .15s ease-out;
+    bottom: -32.5px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    -webkit-transition: all .15s ease-out;
+    -moz-transition: all .15s ease-out;
+    -ms-transition: all .15s ease-out;
+    -o-transition: all .15s ease-out;
+}
+
+.dice-button:hover{
+    box-shadow: 0 0 30px var(--clr-neon-green);
+}
+
+.dice-button img{
+    width: 27.5px;
+    transform-origin: center;
+    transition: all .15s ease-out;
+    -webkit-transition: all .15s ease-out;
+    -moz-transition: all .15s ease-out;
+    -ms-transition: all .15s ease-out;
+    -o-transition: all .15s ease-out;
+}
+
+.dice-button[rolled-condition=on] img{
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}
+
+.advice-mobile-divider{
+    display: none;
+}
+
+@media (max-width:375px){
+    :root{
+        --fs-title:24px;
+        --fs-subtitle:14px;
+    }
+
+    .advice-card{
+        width: 88vw;
+    }
+
+    .advice-mobile-divider{
+        display: block;
+    }
+
+    .advice-desktop-divider{
+        display: none;
+    }
+
+    .advice-card-wrapper{
+        margin-bottom: 20px;
+    }
+
+    .dice-button{
+        transform: scale(0.9);
+        -webkit-transform: scale(0.9);
+        -moz-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        -o-transform: scale(0.9);
+}
+}
