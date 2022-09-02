@@ -137,6 +137,14 @@ button:focus{
     margin-bottom: 30px;
 }   
 
+.advice-card-wrapper img{
+    transition: all .15s ease-out;
+    -webkit-transition: all .15s ease-out;
+    -moz-transition: all .15s ease-out;
+    -ms-transition: all .15s ease-out;
+    -o-transition: all .15s ease-out;
+}
+
 .dice-button{
     position: absolute;
     cursor: pointer;
@@ -161,7 +169,11 @@ button:focus{
     -o-transition: all .15s ease-out;
 }
 
-.dice-button:hover{
+.dice-button:hover, .dice-button:focus{
+    opacity: 0.75;
+}
+
+.dice-button:active{
     box-shadow: 0 0 30px var(--clr-neon-green);
 }
 
@@ -187,9 +199,17 @@ button:focus{
     display: none;
 }
 
+.advice-card[data-preloader="on"] .advice-card-wrapper img{
+    opacity: 0;
+}
+
+.advice-card[data-preloader="off"] .advice-card-wrapper img{
+    opacity: 1;
+}
+
 @media (max-width:375px){
     :root{
-        --fs-title:24px;
+        --fs-title:22px;
         --fs-subtitle:14px;
     }
 
